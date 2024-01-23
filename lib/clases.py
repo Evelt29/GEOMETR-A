@@ -11,4 +11,5 @@ class Rectangulo:
         return (self.ancho * self.largo)
     def perimetro(self):
         return 2*(self.ancho + self.largo)
+
     
