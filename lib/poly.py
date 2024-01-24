@@ -31,7 +31,8 @@ class Poligono:
                 return "tu poligono no lo identifico"
     
     def periPoly(self):
-        return (f" El perímetro es de: {self.numlado * self.sizelado}")
+        return self.numlado * self.sizelado
+    
     
     
         
@@ -52,5 +53,20 @@ class PoligonoRegular(Poligono):
     
     def __str__(self):
         return f" Num lado: {self.numlado}, Size lado: {self.sizelado}, Apotema: {self.apotema}"
+    
+    def getArea(self):
+        area = ((self.apotema) * (super().periPoly()))/2
+        return area
         
+        
+    def chkArea(self):
+        if self.getArea() >= 200:
+            return "sí :)"
+        else :
+            return "no :("
+    
+    def setColor(self,color):
+        self.color = color 
+        #return f"El color es: {self.color}"
+        pass
 # FIN POLIGNO REGULAR

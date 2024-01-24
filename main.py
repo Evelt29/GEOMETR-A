@@ -37,4 +37,25 @@ print("------------------------------------------------")
 obj_poly_2 = PoligonoRegular(5,15,10)
 print(obj_poly_2)
 print(obj_poly_2.nomPoly())
-print(obj_poly_2.periPoly())
+print(f"El área es de: {obj_poly_2.periPoly()}")
+print("------------------------------------------------")
+print(f" El área es de: {obj_poly_2.getArea()}")
+print(f" ¿El área es mayor a 200? {obj_poly_2.chkArea()}")
+#print(obj_poly_2.setColor("Verde vejiga"))
+obj_poly_2.setColor("Verde vejiga")
+print(obj_poly_2.color)
+
+num1 = "10" # / 10 
+num2 = 0
+
+
+try :
+    div = num1 / num2
+except ZeroDivisionError:
+    print("No se puede dividir entre cero :( ")
+    
+except TypeError:
+    print("No se puede dividir str entre números :( ")
+    
+except Exception as e:
+    print(f"Error desconocido: {e}")
