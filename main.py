@@ -2,7 +2,7 @@ from lib import *
 
 
 #hw()
-obj_rect = Rectangulo(10,5)
+"""obj_rect = Rectangulo(10,5)
 print(obj_rect)
 print("ANCHO: "+str(obj_rect.ancho))
 print("LARGO: "+str(obj_rect.largo))
@@ -61,4 +61,9 @@ except Exception as e:
     print(f"Error desconocido: {e}")
 
 print("holi") 
-print(" bye ")
+print(" bye ")"""
+
+art1 = Articulo(10256,"Coca-Cola","Canada Dry")
+print(art1)
+art1.setPrecio(25.00)
+print(art1)
