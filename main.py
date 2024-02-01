@@ -64,6 +64,36 @@ print("holi")
 print(" bye ")"""
 
 art1 = Articulo(10256,"Coca-Cola","Canada Dry")
-print(art1)
+art1.setDescuento(10)
+art1.setPeso(10)
+art1.setInventario(10)
 art1.setPrecio(25.00)
 print(art1)
+
+cart1 = Cart("ABC123")
+#print(cart1)
+
+cart2 = Cart("DEF456")
+#print(cart2)
+
+cart3 = Cart("GHI789")
+#print(cart3)
+
+art2 = Articulo(10165,"Sabritas","Rancheritos 500gr")
+art1.setDescuento(25)
+art1.setPeso(500)
+art1.setInventario(5)
+art1.setPrecio(22.00)
+#print(art2)
+
+art3 = Articulo(11608,"Bimbo","Mantacadas 150gr")
+art1.setPeso(150)
+art1.setInventario(5)
+art1.setPrecio(22.00)
+#print(art3)
+
+cart1.addarticulo(art1.Id)
+cart1.addarticulo(art2.Id)
+cart1.addarticulo(art3.Id)
+print(cart1)
+print(cart2)
