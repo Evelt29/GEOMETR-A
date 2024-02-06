@@ -51,18 +51,34 @@ class Articulo():
 class Cart():
     def __init__(self,IdCart):
         self.IdCart = IdCart
-        self.articulos =[ ]
+        self.objArticulos =[ ]
         pass
         
     def __str__(self):
         printCart = f"Carrito número: {self.IdCart} \n"
-        if len(self.articulos) >= 1:
-            for i in range (0, len(self.articulos),1):
-                printCart += f"Articulo: {self.articulos[i]}\n"
+        if len(self.objArticulos) >= 1:
+            for i in range (0, len(self.objArticulos),1):
+                printCart += f"Articulo: {self.objArticulos[i]}\n"
         else: 
                 printCart += f"Carrito vacio"    
         return printCart    
-    def addarticulo(self,IdArt):
-        self.articulos.append(IdArt)
+    def addarticulo(self,objArt):
+        if type (objArt.inventario) != type(None):
+            if objArt.inventario >= 1:
+                objArt.inventario -= 1
+                self.objArticulos.append(objArt)
+            else:
+                print(f"No hay inventario de :( {objArt.nombre}")
+        else:
+            print("Inventario no definido")
         return 0 
+    
+    def geTotal1(self):
+        total = 0
+        for i in range (0, len(self.objArticulos),1):
+            total += self.objArticulos[1].getPreciodto()
+        return total
+       
+        
+        
     
