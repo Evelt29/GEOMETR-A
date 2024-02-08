@@ -23,7 +23,7 @@ class Articulo():
         self.inventario = inventario
         pass
     def __str__(self):
-        return f"nombre: {self.Id} - Id: {self.marca} - marca: {self.nombre} - Precio: {self.precio} - Peso: {self.peso} - descuento: {self.descuento} - inventario: {self.inventario}"
+        return f"nombre: {self.Id} | Id: {self.marca} | marca: {self.nombre} | Precio: {self.precio} | Peso: {self.peso} | descuento: {self.descuento} | inventario: {self.inventario}"
         
     def setPrecio(self,precio):
         self.precio = precio
@@ -38,6 +38,13 @@ class Articulo():
     def setInventario(self,inventario):
         self.inventario = inventario
         return 0
+    def getDescuento(self):
+        if self.descuento != None:
+            precioDescuento = (self.precio * (self.descuento/100))
+        else:
+            precioDescuento = 0
+        return precioDescuento    
+        
     def getPreciodto(self):
         if self.descuento != None:
             precioDescuento = self.precio - (self.precio * (self.descuento/100))
@@ -55,10 +62,10 @@ class Cart():
         pass
         
     def __str__(self):
-        printCart = f"Carrito número: {self.IdCart} \n"
+        printCart = f"Ticket# : {self.IdCart} \n"
         if len(self.objArticulos) >= 1:
             for i in range (0, len(self.objArticulos),1):
-                printCart += f"Articulo: {self.objArticulos[i]}\n"
+                printCart += f"{self.objArticulos[i].Id} {self.objArticulos[i].nombre} $ {self.objArticulos[i].precio} mxn\n -${self.objArticulos[i].getDescuento()}mxn\n"
         else: 
                 printCart += f"Carrito vacio"    
         return printCart    
@@ -73,12 +80,17 @@ class Cart():
             print("Inventario no definido")
         return 0 
     
-    def geTotal1(self):
+    def geTotal(self):
         total = 0
         for i in range (0, len(self.objArticulos),1):
             total += self.objArticulos[1].getPreciodto()
         return total
        
+    def geTotalDesc(self):
+        total = 0
+        for i in range (0, len(self.objArticulos),1):
+            total += self.objArticulos[1].getDescuento()
+        return total
         
         
     
